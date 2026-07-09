@@ -28,7 +28,7 @@ A backend-focused course marketplace app with basic CRUD operations from both us
 
 ## Features
 - User and admin signup/signin
-- Admins can create and update courses (delete functionality coming soon)
+- Admins can create, update courses & delete courses.
 - Users can purchase courses (no payment gateway yet — purchases are free)
 - Users can view their purchased courses
 
@@ -51,6 +51,5 @@ A backend-focused course marketplace app with basic CRUD operations from both us
 | PUT | `/shricourse/v1/admin/editcourse` | Update an existing course (auth required) |
 
 ## ToDo more
-- [ ] Delete course functionality
 - [ ] Payment gateway integration
-- [ ] Input validation
+- [ ] Input validation using brcrypt & zod.
