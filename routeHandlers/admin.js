@@ -140,6 +140,36 @@ adminRouter.put("/editcourse", adminMiddleware, async (req, res) => {
     }
 })
 
+adminRouter.delete("/deletecourse", adminMiddleware, async (req, res) => {
+    const adminId = req.adminId
+    const courseId = req.body.courseId
+
+    try {
+        const course = await courseModel.deleteOne(
+            {
+                _id: courseId,
+                adminId: adminId
+            },
+        )
+
+        if (course.matchedCount === 0) {
+            return res.status(404).json({
+                message: "Course not found, or you don't have permission to delete it"
+            })
+        } else {
+            res.json({
+                message: "Course Deleted!"
+            })
+        }
+
+    } catch (error) {
+        console.log(error)
+        return res.json({
+            message: "Something went wrong!"
+        })
+    }
+})
+
 
 module.exports = {
     adminRouter: adminRouter
