@@ -49,6 +49,7 @@ A backend-focused course marketplace app with basic CRUD operations from both us
 | POST | `/shricourse/v1/admin/signin` | Login and receive a JWT |
 | POST | `/shricourse/v1/admin/createcourse` | Create a new course (auth required) |
 | PUT | `/shricourse/v1/admin/editcourse` | Update an existing course (auth required) |
+| DELETE | `/shricourse/v1/admin/deletecourse` | Delete an existing course (auth required) |
 
 ## ToDo more
 - [ ] Payment gateway integration
