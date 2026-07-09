@@ -152,16 +152,15 @@ adminRouter.delete("/deletecourse", adminMiddleware, async (req, res) => {
             },
         )
 
-        if (course.matchedCount === 0) {
+        if (course.deletedCount === 0) {
             return res.status(404).json({
                 message: "Course not found, or you don't have permission to delete it"
             })
-        } else {
-            res.json({
-                message: "Course Deleted!"
-            })
         }
 
+        res.json({
+            message: "Course Deleted!"
+        })
     } catch (error) {
         console.log(error)
         return res.json({
